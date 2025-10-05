@@ -1,0 +1,16 @@
+services:
+  ansys_2:
+    image: ansys
+    shm_size: '1g'
+    hostname: terminalserver
+    ports:
+      - "3389:3389"
+      - "2222:22"
+    environment:
+      ANSYSLIC_DIR: /usr/ansys_inc/shared_files/licensing
+      # LD_LIBRARY_PATH: $LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu/
+    volumes:
+      - /home/nick/Downloads/ANSYS:/home/ubuntu/ansys:rw
+      - /home/nick/Downloads/Torrents/Ansys.2022.R1.Products.Linux64-SSQ/disk1:/opt/ansys/disk:ro
+      - /home/nick/Downloads/Torrents/Ansys.2022.R1.Products.Linux64-SSQ/_SolidSQUAD_/ANSYS.2022.R1.PRODUCT.LINX64-SSQ/ansys_inc:/opt/ansys/ansys_inc:ro
+
